@@ -9,7 +9,7 @@ class AuthController
         $client = new Google_Client();
         $client->setClientId('45917651012-bhdbuh250a8m0vsiajo7dm8s6umnj4su.apps.googleusercontent.com');
         $client->setClientSecret('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');
-        $client->setRedirectUri('http://localhost:8080/mipy/public/index.php?action=google_callback');
+        $client->setRedirectUri('http://localhost:8081/mipy/public/index.php?action=google_callback');
         $client->addScope('email');
         $client->addScope('profile');
 
@@ -30,7 +30,7 @@ class AuthController
         $client->setHttpClient($guzzleClient); //Usa Guzzle con configuración personalizada
         $client->setClientId('45917651012-bhdbuh250a8m0vsiajo7dm8s6umnj4su.apps.googleusercontent.com');
         $client->setClientSecret('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');
-        $client->setRedirectUri('http://localhost:8080/mipy/public/index.php?action=google_callback');
+        $client->setRedirectUri('http://localhost:8081/mipy/public/index.php?action=google_callback');
 
         if (isset($_GET['code'])) {
             $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
@@ -107,7 +107,7 @@ class AuthController
         session_destroy();
 
         //Logout de Google y luego regresar a tu app
-        $redirect = urlencode('http://localhost:8080/mipy/public/index.php');
+        $redirect = urlencode('http://localhost:8081/mipy/public/index.php');
         $googleLogoutUrl = "https://accounts.google.com/Logout?continue=https://appengine.google.com/_ah/logout?continue={$redirect}";
 
         header("Location: $googleLogoutUrl");
