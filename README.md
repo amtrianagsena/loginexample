@@ -40,8 +40,8 @@ Este proyecto permite autenticar usuarios mediante su cuenta de Google usando PH
 
  5. Abre AuthController.php y configura tus credenciales:
 
-    $client->setClientId('TU_CLIENT_ID');
-    $client->setClientSecret('TU_CLIENT_SECRET');
+    $client->setClientId('TU_CLIENT_ID');<br>
+    $client->setClientSecret('TU_CLIENT_SECRET');<br>
     $client->setRedirectUri('http://localhost:8081/mipy/public/index.php?action=google_callback');
 
   6. Ejecutar XAMMP
